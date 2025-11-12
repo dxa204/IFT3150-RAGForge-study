@@ -1,7 +1,8 @@
-site_name: IFT3150 - Template
-site_description: Template de site web pour le cours IFT3150
-site_author: Louis-Edouard Lafontant
-site_url: https://ift3150-template.github.io
+site_name: IFT3150 - RAGFroge Study
+site_description: Site web pour l'etude utilisateur qui va etre realise pendant cette session pour le cours IFT3150
+site_author: Derin Akay
+site_url: https://dxa204.github.io/IFT3150-RAGForge-study/
+
 
 theme:
   name: material
@@ -35,10 +36,10 @@ theme:
     text: Roboto
     code: Roboto Mono
     
-copyright: "&copy; 2025 <b>DIRO</b> &ndash; Template pour le cours IFT3150/IFT4055 <br>Département d'informatique et de recherche opérationnelle <br>Université de Montréal"
+copyright: "&copy; 2025 <b>DIRO</b> &ndash; IFT3150 - Projet RAGForge Study <br>Département d'informatique et de recherche opérationnelle <br>Université de Montréal"
 
-repo_name: ift3150-template
-repo_url: https://github.com/ift3150-template/ift3150-template.github.io
+repo_name: IFT3150-RAGForge-study
+repo_url: https://github.com/dxa204/IFT3150-RAGForge-study
 # edit_uri: edit/main/docs/
 
 # extra:
