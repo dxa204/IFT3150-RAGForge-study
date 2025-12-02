@@ -167,7 +167,6 @@
     - Tests nécessaires pour s’assurer que la réduction de taille n’affecte pas les flux complexes.
 
 !!! abstract "Prochaines étapes"
-    - Écrire des tests **UX/QA** pour le modal (validation de schéma, états d’erreur)
     - Mesurer et consigner les **gains de taille** (avant/après) des flux d’exemple
     - Mettre à jour la **documentation utilisateur** pour la configuration de Fusion via le modal
     - Démarrer la **préparation logistique de l’étude utilisateur**, maintenant validée sur le plan éthique
@@ -175,9 +174,71 @@
 
 ## Semaine 9
 
+??? note "Travail réalisé"
+    - [x] Correction de l'erreur **chunkMethod is "(unspecified)"** pour les méthodes de stockage vectoriel dans le Retriever en ajoutant chunkMethod aux variables normales dans les boucles d'embeddings.
+    - [x] Correction du bug des paramètres modaux OpenAI Tiktoken (voir ChunkMethodSchema.tsx), et le champ **'model'** prend désormais en charge les tokenizers.
+    - [x] Correction de l'erreur **"ENTITY TOO LARGE"** en envoyant les données comme un fichier au lieu de JSON simple (reflète Media Node).
+    - [x] Correction du bug d'erreur de la méthode d'embedding — un message significatif est maintenant retourné au frontend au lieu d'un échec silencieux.
+    - [x] Correction du bug d'alignement de l'axe y de l'affichage **Vis**.
+
+!!! info "Notes"
+
+    - Ces correctifs garantissent une **gestion des données** et une **configuration du modèle** plus robustes, notamment pour les tâches d'embedding et de récupération.
+    - L'envoi des données comme fichier pour éviter l'erreur de taille améliore la **fiabilité pour les grands ensembles de données**.
+
+!!! warning "Difficultés rencontrées"
+
+    - S'assurer que l'ajout de **chunkMethod** n'introduise pas de régressions dans les boucles d'embeddings existantes.
+
+!!! abstract "Prochaines étapes"
+    - Continuer à tester l'impact des correctifs de la méthode d'embedding et de la gestion des erreurs sur la performance globale.
+    - Examiner les autres composants pour des erreurs d'alignement similaires à celles corrigées sur l'axe y de l'affichage Vis.
+
+---
+
 ## Semaine 10
 
+??? note "Travail réalisé"
+    - [x] Correction du bug de seuil pour le **chunker sémantique** — la valeur par défaut (0.8) est maintenant utilisée au lieu de "auto".
+    - [x] Correction du bug de persistance du fichier supprimé dans le backend en utilisant **MediaLookup.remove()** (reflète Media Node).
+    - [x] Correction du **Late Chunker** en supprimant **add_special_tokens**, car les nouvelles versions de sentence-transformers lèvent une erreur lorsqu'il n'est pas pris en charge, et le late chunker de Chonkie le définit par défaut.
+    - [x] Correction de l'exemple de flux de document **cf-docs** pour utiliser une méthode de chunking prise en charge (via #query), et mise à jour de l'exemple de **Q&A de livre**, car Spacy n'est plus intégré.
+    - [x] Correction de la méthode de **Sentence Chunker** de **Chonkie**; elle sépare maintenant par phrase.
+
+!!! info "Notes"
+
+    - Ces ajustements sont cruciaux pour la **précision** et la **stabilité** des opérations de chunking et de gestion des fichiers.
+    - La correction du Late Chunker assure la **compatibilité** avec les bibliothèques de transformers mises à jour.
+
+!!! warning "Difficultités rencontrées"
+
+    - S'assurer que la suppression de Spacy et la modification des exemples n'interrompent pas les flux de travail des utilisateurs existants.
+
+!!! abstract "Prochaines étapes"
+    - Mettre à jour la documentation utilisateur concernant le nouveau seuil par défaut pour le chunker sémantique.
+    - Explorer d'autres dépendances qui pourraient nécessiter des ajustements pour la compatibilité avec les nouvelles versions de bibliothèques.
+
+---
+
 ## Semaine 11
+
+??? note "Travail réalisé"
+    - [x] Définition de la méthode par défaut du retriever (inspecteur) à **'retrievalMethod'**.
+    - [x] Regroupement de la méthode de chunking sous de nouveaux titres.
+    - [x] Ajout d'infobulles aux méthodes de chunking et de retrieval.
+    - [x] Suppression de **SDPM Chunker** car il est déprécié. Au lieu de cela, il est intégré au Semantic Chunker. **skip_window = 0** exécute le chunker sémantique normal, **skip_window = 1** exécute SDPM.
+
+!!! info "Notes"
+
+    - Ces changements améliorent l'**expérience utilisateur** en clarifiant les options disponibles via des regroupements logiques, des infobulles et des valeurs par défaut.
+    - L'intégration de SDPM dans Semantic Chunker simplifie la **maintenance du code**.
+
+!!! warning "Difficultités rencontrées"
+
+    - Communiquer clairement la dépréciation de SDPM Chunker et la nouvelle façon d'accéder à sa fonctionnalité via **skip_window = 1** dans Semantic Chunker.
+
+!!! abstract "Prochaines étapes"
+    - Effectuer une révision complète de l'interface utilisateur pour s'assurer que les nouvelles infobulles sont claires et complètes.
 
 ## Semaine 12
 

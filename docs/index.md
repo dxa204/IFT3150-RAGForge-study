@@ -18,10 +18,10 @@ Malgré ses atouts, ChainForge offre peu de support natif pour le RAG. Cette lac
 Nous proposons d’étendre **RAGForge** (prototype basé sur ChainForge) afin d’offrir un support **complet** du RAG tout en préservant son flux unique de comparaison multi-LLM. Les utilisateurs pourront téléverser et traiter des documents, les segmenter automatiquement, récupérer des contextes pertinents et enrichir les réponses des modèles. L’interface visuelle permettra de chaîner des étapes RAG avec plusieurs requêtes LLM, d’observer les résultats intermédiaires et de comparer les sorties dans un même contexte.
 
 **Objectifs concrets :**
-- Intégrer le pipeline RAG de bout en bout (ingestion → segmentation → indexation → retrieval → injection de contexte).
+- Intégrer le pipeline RAG de bout en bout (uploading → chunking → retrieval → (reranking) → output).
 - Conserver et améliorer le flux de **comparaison multi-LLM** avec contexte partagé.
 - Exposer les **résultats intermédiaires** pour la traçabilité et le debug.
-- Après le lancement, mener une **étude utilisateur** pour recueillir des retours sur l’ergonomie, la fiabilité et la performance, et orienter les améliorations futures.
+- Mener une **étude utilisateur** pour recueillir des retours sur l’ergonomie, la fiabilité et la performance, et orienter les améliorations futures.
 
 ## Échéancier
 
@@ -33,5 +33,6 @@ Nous proposons d’étendre **RAGForge** (prototype basé sur ChainForge) afin d
 | Ouverture de projet            | 1 septembre   | Proposition de projet               | ✅ Terminé  |
 | Commence l'authorisation sur Nagano        | 16 septembre  | Formulaire                  | ✅ Terminé  |
 | Terminer RAGForge et faire la lancement                    | 13 Novembre  | Interface fonctionnel         | ⏳ À venir  |
-| Faire l'etude utilisateur                    | Novembre-Decembre  | Rapport final             | ⏳ À venir  |
-| Presentation Orale                   | Janvier  | Presentation de la projet fini         | ⏳ À venir  |
+| Faire l'etude utilisateur                    | Novembre-Decembre  | Le rapport final             | ✅ Terminé  |
+| Presentation Orale                   | 11 Decembre  | Presentation de la projet fini         | ⏳ À venir  |
+| Soumettre le rapport final | 19 Decembre | Le rapport final | ⏳ À venir|
